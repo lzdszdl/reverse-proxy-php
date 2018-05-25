@@ -6,13 +6,6 @@ $protocal_host=parse_url($target_host);
 //解决中文乱码
 #header("Content-Type:text/html;charset=gb2312"); 
 //本页面强制开启https
-if ($_SERVER["HTTPS"] <> "on")
-{
-    $xredir="https://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-	header("HTTP/1.1 301 Moved Permanently");
-    header("Location: ".$xredir);
-	return;
-}
 //获取浏览器的的Agent
 $Agent = $_SERVER['HTTP_USER_AGENT'];
 //以.分割域名字符串
